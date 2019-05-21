@@ -13,7 +13,7 @@
  * @package           Cirkle_Contact
  *
  * @wordpress-plugin
- * Plugin Name:       Cirkle Contact
+ * Plugin Name:       Refine Contact
  * Plugin URI:        http://www.cirklestudio.co    
  * Description:       This is custom contact form for cirkle studio
  * Version:           1.0.0
