@@ -60,6 +60,7 @@ class Cirkle_Contact_Activator {
 			`experience` TEXT NOT NUll,
 			`cv` TEXT NOT NUll,
 			`job_type` TEXT NOT NULL,
+			`status` TEXT NOT NULL,
 			`timestamp` TEXT NOT NULL,
 			PRIMARY KEY  (id)
 		) $charset_collate";

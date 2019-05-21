@@ -97,6 +97,7 @@ class Cirkle_Contact_Admin {
 		 */
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/cirkle-contact-admin.js', array( 'jquery' ), $this->version, false );
+		wp_localize_script( $this->plugin_name, 'ajax_object', array( 'ajax_url' => admin_url('admin-ajax.php') ) );
 
 	}
 
@@ -112,5 +113,29 @@ class Cirkle_Contact_Admin {
 
 	function job_inquiry_callback(){
 		require( dirname( __FILE__ ) . '/partials/job-inquiry-display.php' );
+	}
+
+	function job_status(){
+		global $wpdb;
+		$job_table = $wpdb->prefix . "job";
+
+		$id = $_POST['id'];
+		$status = $_POST['status'];
+
+		$update = $wpdb->update( 
+			$job_table, 
+			array( 'status' => $status ), 
+			array( 'id' => $id ), 
+			array( '%s' ), 
+			array( '%d' ) 
+		);
+
+		if($update){
+			echo "Status Updated successfully.";
+		}else{
+			echo "Failed to update status.";
+		}
+
+		wp_die();
 	}
 }

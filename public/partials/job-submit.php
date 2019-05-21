@@ -11,6 +11,7 @@ $file = "CV-".time()."-".$_FILES['file']['name'];
 $description = $_POST['description'];
 $job_type = $_POST['job_type'];
 $timestamp = current_time( 'timestamp' );
+$job_status = 0;
 
 // print_r($_POST);
 // var_dump($_FILES['file']);
@@ -30,6 +31,7 @@ $insert = $wpdb->insert( $job_table, array(
     'experience'    => $experience,
     'CV'            => $file,
 	'job_type'      => $job_type,
+	'status'      => $job_status,
 	'timestamp'		=> $timestamp
     ),
     array( '%d', '%s', '%s', '%s', '%s', '%s', '%s', '%s' ) 

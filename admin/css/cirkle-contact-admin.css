@@ -1,4 +1,43 @@
 /**
- * All of the CSS for your admin-specific functionality should be
- * included in this file.
- */
+* All of the CSS for your admin-specific functionality should be
+* included in this file.
+*/
+
+.alert-msg{
+    display: none;
+    min-height: 40px;
+    margin: 10px 0px;
+    padding: 10px 15px;
+    background-color: #eeeeee;
+    position: relative;
+}
+.alert-msg.active{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}   
+.close-alert {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    position: relative;
+    cursor: pointer;
+}
+
+.close-alert .bar {
+    width: 20px;
+    height: 2px;
+    background: #000000;
+    position: absolute;
+    top: 20px;
+    left: 10px;
+}
+.close-alert .bar:nth-child(1){
+    transform: rotate(45deg);
+}
+.close-alert .bar:nth-child(2){
+    transform: rotate(-45deg);
+}

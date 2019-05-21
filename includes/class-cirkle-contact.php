@@ -157,6 +157,8 @@ class Cirkle_Contact {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_menu_pages' );
+		$this->loader->add_action( 'wp_ajax_job_status', $plugin_admin, 'job_status' );
+		$this->loader->add_action( 'wp_ajax_nopriv_job_status', $plugin_admin, 'job_status' );
 	}
 
 	/**
